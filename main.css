@@ -57,12 +57,14 @@ body {
   text-align: center;
   z-index: 2; }
   .next-page-wraper .next-page {
+    width: 100px;
+    height: 30px;
     display: inline-block;
     padding-bottom: 27px;
-    -webkit-background-size: 55%;
-    background-size: 55%;
-    -webkit-background-image: url("down.png");
-    background-image: url("down.png");
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    -webkit-background-image: url("img/slideup.png");
+    background-image: url("img/slideup.png");
     -webkit-background-repeat: no-repeat;
     background-repeat: no-repeat;
     background-position: center bottom;
