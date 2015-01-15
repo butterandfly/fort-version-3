@@ -1,5 +1,4 @@
-(function() {
-  "use strict";
+//(function() {
 
 
   var pageInfos = [
@@ -196,4 +195,4 @@
       });
     }, 0);
   });
-})();
+//})();
