@@ -1,5 +1,5 @@
-//(function() {
-
+(function() {
+  window.sf_UserIp = null;
 
   var pageInfos = [
     {imgSrc: 'img/01.jpg', wordsImgSrc: 'img/T01.png', wordsPos: '20%'},
@@ -152,14 +152,14 @@
     ev.preventDefault();
     // 注意，这里使用setTimeout是因为ios上直接调用含alert的方法会导致事件在其他touchend事件触发时的二次触发
     setTimeout(function () {
-      //var uname = $('input[name=uname]').val();
+      var uname = $('input[name=uname]').val();
       var mobile = $('input[name=mobile]').val();
-      var sex = $('input[name=sex]:checked').val();
+      //var sex = $('input[name=sex]:checked').val();
 
-      //if (!uname) {
-      //  ___log("名称缺失");
-      //  return alert("请填写名称");
-      //}
+      if (!uname) {
+        ___log("名称缺失");
+        return alert("请填写名称");
+      }
 
       if (!mobile) {
         ___log("电话缺失");
@@ -170,7 +170,6 @@
 //        alert(uname);
 //        alert(mobile);
 //        alert(sex);
-//        return;
 
       _CWiQ.push(['_trackReg', 1]);
       ___log('submit');
@@ -178,9 +177,9 @@
       window._CiQ10412.push(['_trackEvent', {
         type: 1,
         labels: [
-          {'1': mobile}
-          , {'2': ''}
-          , {'3': ''}
+          {'1': uname}
+          , {'2': mobile}
+          , {'3': window.sf_UserIp}
           , {'4': ''}
           , {'5': ''}
           , {'6': ''}
@@ -195,4 +194,4 @@
       });
     }, 0);
   });
-//})();
+})();

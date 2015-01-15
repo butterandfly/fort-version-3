@@ -37,15 +37,26 @@
     <div class="swiper-slide page form-part">
     <div class="form-page">
       <div class="content-area2">
+        <div class="title-area">
+          <div class="words-area">
+            <!--<p>填写信息预约试驾</p>-->
+            <!--<p>将有机会获得百元油卡！</p>-->
+            <!--<p class="attention">注：卡版随机配送，以实际收到卡板为主</p>-->
+            <img src="img/text.png">
+          </div>
+          <div class="card-area">
+            <img src="img/ka.png">
+          </div>
+        </div>
         <form>
-          <legend class="form-title">在线预约：</legend>
+          <!--<legend class="form-title">在线预约：</legend>-->
           <ul class="form-list">
-            <!--<li>-->
-              <!--<input name="uname" type="text" placeholder="输入您的姓名">-->
-            <!--</li>-->
+            <li>
+              <input name="uname" type="text" placeholder="请输入您的称呼">
+            </li>
 
             <li>
-              <input name="mobile" type="tel" placeholder="输入您的电话">
+              <input name="mobile" type="tel" placeholder="请输入您的电话">
             </li>
 
             <!--<li class="sex-line">-->
@@ -106,6 +117,16 @@
     }]);
     window.CClickiV3 && window.CClickiV3[10412] && window.CClickiV3[10412]._flushObserver(function(){});
   }
+</script>
+<script>
+  jQuery(function($){
+    var url = 'http://chaxun.1616.net/s.php?type=ip&output=json&callback=?&_='+Math.random();
+    $.getJSON(url, function(data){
+      console.log(data.Ip);
+      window.sf_UserIp = data.Ip;
+      ___log('用户ip：' + window.sf_UserIp);
+    });
+  });
 </script>
 
 </body>

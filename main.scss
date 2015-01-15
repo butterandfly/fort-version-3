@@ -110,7 +110,28 @@ body {
   width: 100%;
   min-height: 430px;
   height: 100%;
-  background: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#aaa));
+//  background: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#aaa));
+  background-color: black;
+
+  .title-area {
+    @include flex-layout(row, flex-start, center);
+    margin-bottom: 30px;
+    width: 280px;
+    color: #eee;
+    text-align: left;
+
+    p {
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+      color: #eee;
+    }
+
+    .attention {
+      color: yellow;
+      font-size: 13px;
+    }
+  }
 
   .form-title {
     color: #444;
