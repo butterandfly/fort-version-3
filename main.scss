@@ -38,7 +38,13 @@ body {
   }
 }
 
+//.page-container {
+//  @include flex-layout(column, flex-start, center);
+//  height: 100%;
+//}
+
 .swiper-container {
+  @include flex(1);
   color: #fff;
   text-align: center;
 
