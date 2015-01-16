@@ -22,7 +22,7 @@
 <body>
 <!-- 漂浮的logo -->
 <div class="logo-line">
-  <img src="logo.png" alt="福特" class="logo"><span>福特福睿斯</span>
+  <img src="img/logo.png" alt="福特" class="logo"><span>福特福睿斯</span>
 </div>
 
 <!-- 内容页 -->
@@ -40,29 +40,23 @@
     <div class="swiper-slide page form-part">
     <div class="form-page">
       <div class="content-area2">
-        <div class="title-area">
-          <div class="words-area">
-            <!--<p>填写信息预约试驾</p>-->
-            <!--<p>将有机会获得百元油卡！</p>-->
-            <!--<p class="attention">注：卡版随机配送，以实际收到卡板为主</p>-->
-            <img src="img/text.png">
-          </div>
-          <div class="card-area">
-            <img src="img/ka.png">
-          </div>
-          <div>
-            <span class="more-detail">活动详情</span>
-          </div>
-        </div>
         <form>
-          <!--<legend class="form-title">在线预约：</legend>-->
+          <legend class="form-title">在线预约：</legend>
           <ul class="form-list">
+            <li class="get-50rmb">
+              <span>* </span>提交信息即可获赠50元话费
+              <span> <a class="more-detail" data-toggle="modal" data-target="#detail-modal">【点击查看详情】</a></span>
+            </li>
             <li>
               <input name="uname" type="text" placeholder="请输入您的称呼">
             </li>
 
             <li>
               <input name="mobile" type="tel" placeholder="请输入您的电话">
+            </li>
+            <li class="agree-line">
+              <input type="checkbox" name="agree" checked/>
+              <p>我同意将本人信息提交给长安福特并要求长安福特根据 <span>《保护消费者个人信息基本方针》</span>保障个人信息安全</p>
             </li>
 
             <li class="btn-item">
@@ -78,9 +72,19 @@
             <button class="sf-modal-close">
             <span aria-hidden="true">&times;</span>
             </button>
+            <h3>赠送话费活动</h3>
           </div>
           <div class="sf-modal-content">
-            <h3>Blah blah.</h3>
+            <p> 活动时间：2015年1月10日—2月10日 <br/>
+            参与方式：在活动页面，填写个人信息预约试驾，我们将有专人和您联系，信息一经核实即可获得50元话费。<br/>
+            礼品设置：50元手机话费，100%回赠</p>
+            <h4>活动声明：</h4>
+            <ol>
+              <li>若未留下信息与主办方联系，将直接取消获得礼品资格。</li>
+              <li>所有参与活动网友必须保证提交真实的个人信息并以有效的方式参与活动，否则主办方将无法联系网友领取话费。</li>
+              <li> 本活动申领的个人信息，同一姓名和手机号只限一次。</li>
+              <li> 最终解释权归福特所有。</li>
+            </ol>
           </div>
         </div>
       </div>

@@ -3,20 +3,35 @@
   z-index: 999;
   @include flex-layout(column, center, center);
 
+  color: black;
+
   .sf-modal-backdrop {
     @include backdrop(black, 0.6, -1);
   }
 
   .sf-modal-box {
-    width: 300px;
-    height: 300px;
+    @include flex-layout(column, center, center);
+    width: 280px;
+//    height: 320px;
 
     border: 1px #777 solid;
     border-radius: 3px;
     background: #fff;
   }
 
+  .sf-modal-header {
+    width: 100%;
+    h3 {
+      margin: 0;
+      padding: 5px;
+    }
+  }
+
   .sf-modal-close {
+    border: 0;
+    padding: 0 3px;
+    background: white;
+
     float: right;
     font-size: 21px;
     font-weight: 700;
@@ -28,6 +43,26 @@
   }
 
   .sf-modal-content {
-    color: black;
+//    @include flex(1);
+//    overflow: scroll;
+//    -webkit-overflow-scrolling: touch;
+//    z-index: 0;
+    text-align: left;
+
+    p {
+      margin: 0;
+      padding: 5px;
+    }
+
+    h4 {
+      margin: 0;
+      padding: 5px;
+    }
+
+    ol {
+      margin: 0;
+      padding: 0 5px 10px 23px;
+      font-size: 10px;
+    }
   }
 }
