@@ -109,6 +109,40 @@ body {
   }
 }
 
+.sf-modal {
+  @include full-screen();
+  z-index: 999;
+  @include flex-layout(column, center, center);
+
+  .sf-modal-backdrop {
+    @include backdrop(black, 0.6, -1);
+  }
+
+  .sf-modal-box {
+    width: 300px;
+    height: 300px;
+    
+    border: 1px #777 solid;
+    border-radius: 3px;
+    background: #fff;
+  }
+
+  .sf-modal-close {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+  }
+
+  .sf-modal-content {
+    color: black;
+  }
+}
+
 // 表格页
 .form-page {
   @include flex-layout(column, center, center);

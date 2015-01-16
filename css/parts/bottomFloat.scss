@@ -1,0 +1,57 @@
+.bottom-float {
+  height: $footer-height;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  z-index: 5;
+
+  @include flex-layout(row, flex-start, center);
+
+  .cutting-line {
+    display: inline-block;
+    border-left: 1px #999 solid;
+    height: $footer-height - 20;
+  }
+
+  a {
+    -webkit-user-select: none;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+
+    display: inline-block;
+    height: 100%;
+    //    background-color: coral;
+    text-align: center;
+    line-height: $footer-height;
+
+    @include flex(1);
+  }
+
+  a.call {
+    img {
+      width: 34px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+
+  a.bottom-book, a.bottom-cancel {
+    img {
+      width: 34px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+
+  .footer-backdrop {
+    @include full-screen();
+    z-index: -1;
+
+    background-color: black;
+    opacity: 0.7;
+  }
+}

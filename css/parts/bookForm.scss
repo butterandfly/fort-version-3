@@ -1,0 +1,109 @@
+// 表格页
+.form-page {
+  @include flex-layout(column, center, center);
+  position: relative;
+  width: 100%;
+  min-height: 430px;
+  height: 100%;
+  //  background: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#aaa));
+  background-color: black;
+
+  .title-area {
+    @include flex-layout(row, flex-start, center);
+    margin-bottom: 30px;
+    width: 280px;
+    color: #eee;
+    text-align: left;
+
+    p {
+      margin: 0;
+      padding: 0;
+      font-size: 16px;
+      color: #eee;
+    }
+
+    .attention {
+      color: yellow;
+      font-size: 13px;
+    }
+  }
+
+  .form-title {
+    color: #444;
+    font-size: 22px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+  }
+  .form-list {
+    @include simple-list();
+
+    li {
+      text-align: left;
+      width: 280px;
+      margin-bottom: 15px;
+
+      input[type=text], input[type=tel] {
+        @include box-sizing(border-box);
+        width: 100%;
+        padding: 0;
+        padding-left: 3px;
+        font-size: 18px;
+        height: 40px;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+      }
+    }
+
+    li.sex-line {
+      label {
+        margin-right: 20px;
+        font-size: 19px;
+
+        input[type=radio] {
+          margin-right: 5px;
+        }
+      }
+    }
+
+    // 标题列
+    li.title-item {
+      font-size: 18px;
+      color: black;
+      margin-bottom: 30px;
+
+      p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 18px;
+        color: #4c4c4c;
+      }
+
+      span {
+        color: #d40e16;
+        font-size: 24px;
+        vertical-align: middle;
+        font-weight: bolder;
+      }
+    }
+
+    // 按钮列
+    li.btn-item {
+      button {
+        width: 100%;
+        height: 46px;
+        border: 0;
+        font-size: 24px;
+        color: white;
+      }
+
+      .submit-btn {
+        margin-top: 20px;
+        background-color: #d40e16;
+      }
+
+      .back-btn {
+        background-color: #777;
+      }
+    }
+  }
+}

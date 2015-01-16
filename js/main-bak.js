@@ -1,9 +1,5 @@
 (function() {
-  "use strict";
-
-  var _shunfei = window._shunfei = {
-    userIp: null
-  };
+  window.sf_UserIp = null;
 
   var pageInfos = [
     {imgSrc: 'img/01.jpg', wordsImgSrc: 'img/T01.png', wordsPos: '20%'},
@@ -49,7 +45,17 @@
 
   addPages();
 
-  _shunfei.totalPage = pageInfos.length;
+  // lazyload
+  //$('.swiper-wrapper img').lazyload({
+  //  threshold: 10,
+  //  container: $(".swiper-wrapper")
+  //});
+
+  var bottomFloat = $('.bottom-float');
+  //var nameInputElm = $('.form-page input[name=uname]');
+  var mobileInputElm = $('.form-page input[name=mobile]');
+
+  var totalPage = pageInfos.length;
   var preIndex = 0;
 
   // 读取下一页图片
@@ -64,7 +70,7 @@
   }
 
   // 初始化swiper
-  _shunfei.mySwiper = new Swiper('.swiper-container', {
+  var mySwiper = new Swiper('.swiper-container', {
     mode: 'vertical',
     onSwiperCreated: function(swiper) {
       loadNextPageImg(1, $(swiper.slides[1]));
@@ -76,6 +82,7 @@
         if (!jqElm.attr('src')) {
           var src = jqElm.attr( "data-original" );
           jqElm.attr('src', src);
+          //$(this).fadeOut(0).fadeIn(500);
         }
       })
 
@@ -102,27 +109,29 @@
       // 第一页为0
       if (!logMap[currentIndex]) {
         logMap[currentIndex] = true;
-        //console.log(preIndex  + ' -> ' + currentIndex);
+        console.log(preIndex  + ' -> ' + currentIndex);
         ___log(preIndex  + ' -> ' + currentIndex);
       }
       preIndex = swiper.activeIndex;
     }
   });
-})();
-(function() {
-  "use strict";
 
-  var bottomFloat = $('.bottom-float');
-  var nameInputElm = $('.form-page input[name=uname]');
-  var mobileInputElm = $('.form-page input[name=mobile]');
+
+  // 立即预定按钮的事件
+  $('.bottom-book').on('touchend', function() {
+    mySwiper.swipeTo(totalPage + 1, 1000);
+    // TODO: 寻找可以弹出键盘的方法
+    //nameInputElm.focus();
+    ___log('跳进表单页');
+  });
 
   // 输入框事件，隐藏悬浮窗
-  nameInputElm.on('focus', function() {
-    bottomFloat.hide();
-  });
-  nameInputElm.on('blur', function() {
-    bottomFloat.show();
-  });
+  //nameInputElm.on('focus', function() {
+  //  bottomFloat.hide();
+  //});
+  //nameInputElm.on('blur', function() {
+  //  bottomFloat.show();
+  //});
 
   mobileInputElm.on('focus', function() {
     bottomFloat.hide();
@@ -131,21 +140,20 @@
     bottomFloat.show();
   });
 
-  // 活动详情
-  var detailModal = $('.sf-modal');
-  var moreDetailBtn = $('.more-detail');
-  moreDetailBtn.on('touchend', function() {
-    detailModal.removeClass('hide');
+  // 拨打电话的点击统计
+  $('a.call').on('touchend', function() {
+    ___log('拨打电话');
   });
 
-  // 提交按钮事件
-  // 发送数据
-  $(".submit-btn").on('touchend', function (ev) {
+
+// 提交按钮事件
+// 发送数据
+  $(".submit-btn").on('touchend', function(ev) {
     ev.preventDefault();
     // 注意，这里使用setTimeout是因为ios上直接调用含alert的方法会导致事件在其他touchend事件触发时的二次触发
     setTimeout(function () {
-      var uname = nameInputElm.val();
-      var mobile = mobileInputElm.val();
+      var uname = $('input[name=uname]').val();
+      var mobile = $('input[name=mobile]').val();
       //var sex = $('input[name=sex]:checked').val();
 
       if (!uname) {
@@ -158,7 +166,7 @@
         return alert("请填写电话");
       }
 
-      // 下面3行为测试代码，实际投放时请注释掉
+      // 下面4行为测试代码，实际投放时请注释掉
 //        alert(uname);
 //        alert(mobile);
 //        alert(sex);
@@ -186,34 +194,4 @@
       });
     }, 0);
   });
-})();
-(function() {
-  "use strict";
-
-  var _shunfei = window._shunfei;
-
-  // 立即预定按钮的事件
-  $('.bottom-book').on('touchend', function() {
-    _shunfei.mySwiper.swipeTo(_shunfei.totalPage + 1, 1000);
-    // TODO: 寻找可以弹出键盘的方法
-    //nameInputElm.focus();
-    ___log('跳进表单页');
-  });
-
-  // 拨打电话的点击统计
-  $('a.call').on('touchend', function() {
-    ___log('拨打电话');
-  });
-})();
-
-(function(){
-  "use strict";
-
-  var modal = $('.sf-modal');
-  var modalCloseBtn = $('.sf-modal-close');
-
-  var tapend = _shunfei.TAPEND || 'touchend';
-  modalCloseBtn.on(tapend, function() {
-    modal.addClass('hide');
-  })
 })();

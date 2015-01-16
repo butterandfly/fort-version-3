@@ -1,0 +1,65 @@
+.swiper-container {
+  @include flex(1);
+  color: #fff;
+  text-align: center;
+
+  position: absolute;
+  top: $navbar-height;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.page {
+  position: relative;
+  img {
+    width: 100%;
+  }
+
+  .words {
+    position: absolute;
+    //    top: 50%;
+    //    bottom: 50px;
+    left: 0;
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+
+    opacity: 0;
+  }
+  .words.show {
+    -webkit-transition: all 0.7s ease-out;
+    //    -webkit-transition-delay: 0.5s;
+    -webkit-transform: translate3d(0, -30px, 0);
+    opacity: 1;
+  }
+}
+
+// 下一页图标
+.next-page-wraper {
+  width: 100%;
+  position: absolute;
+  bottom: 57px;
+  text-align: center;
+  z-index: 2;
+
+  .next-page {
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+    padding-bottom: 27px;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-image: url("img/slideup.png");
+    background-image: url("img/slideup.png");
+
+    -webkit-background-repeat: no-repeat;
+    background-repeat: no-repeat;
+
+    background-position: center bottom;
+    -webkit-background-position: center bottom;
+  }
+}
