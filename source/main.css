@@ -148,88 +148,6 @@ body {
     .form-page .form-list li.btn-item .back2top {
       background-color: #777; }
 
-.sf-modal {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 999;
-  display: -webkit-box;
-  /* OLD - iOS 6-, Safari 3.1-6 */
-  display: -moz-box;
-  /* OLD - Firefox 19- (buggy but mostly works) */
-  display: -ms-flexbox;
-  /* TWEENER - IE 10 */
-  display: -webkit-flex;
-  /* NEW - Chrome */
-  display: flex;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  align-items: center;
-  color: black; }
-  .sf-modal .sf-modal-backdrop {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-color: black;
-    opacity: 0.6;
-    z-index: -1; }
-  .sf-modal .sf-modal-box {
-    display: -webkit-box;
-    /* OLD - iOS 6-, Safari 3.1-6 */
-    display: -moz-box;
-    /* OLD - Firefox 19- (buggy but mostly works) */
-    display: -ms-flexbox;
-    /* TWEENER - IE 10 */
-    display: -webkit-flex;
-    /* NEW - Chrome */
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-align-items: center;
-    align-items: center;
-    width: 280px;
-    border: 1px #777 solid;
-    border-radius: 3px;
-    background: #fff; }
-  .sf-modal .sf-modal-header {
-    width: 100%; }
-    .sf-modal .sf-modal-header h3 {
-      margin: 0;
-      padding: 5px; }
-  .sf-modal .sf-modal-close {
-    border: 0;
-    padding: 0 3px;
-    background: white;
-    float: right;
-    font-size: 21px;
-    font-weight: 700;
-    line-height: 1;
-    color: #000;
-    text-shadow: 0 1px 0 #fff;
-    filter: alpha(opacity=20);
-    opacity: 0.2; }
-  .sf-modal .sf-modal-content {
-    text-align: left; }
-    .sf-modal .sf-modal-content p {
-      margin: 0;
-      padding: 5px; }
-    .sf-modal .sf-modal-content h4 {
-      margin: 0;
-      padding: 5px; }
-    .sf-modal .sf-modal-content ol {
-      margin: 0;
-      padding: 0 5px 10px 23px;
-      font-size: 10px; }
-
 .bottom-float {
   height: 50px;
   position: fixed;
@@ -326,9 +244,91 @@ body {
     padding-bottom: 27px;
     -webkit-background-size: 100%;
     background-size: 100%;
-    -webkit-background-image: url("../../img/slideup.png");
-    background-image: url("../../img/slideup.png");
+    -webkit-background-image: url("../img/slideup.png");
+    background-image: url("../img/slideup.png");
     -webkit-background-repeat: no-repeat;
     background-repeat: no-repeat;
     background-position: center bottom;
     -webkit-background-position: center bottom; }
+
+.sf-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+  color: black; }
+  .sf-modal .sf-modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.6;
+    z-index: -1; }
+  .sf-modal .sf-modal-box {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    width: 280px;
+    border: 1px #777 solid;
+    border-radius: 3px;
+    background: #fff; }
+  .sf-modal .sf-modal-header {
+    width: 100%; }
+    .sf-modal .sf-modal-header h3 {
+      margin: 0;
+      padding: 5px; }
+  .sf-modal .sf-modal-close {
+    border: 0;
+    padding: 0 3px;
+    background: white;
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: 0.2; }
+  .sf-modal .sf-modal-content {
+    text-align: left; }
+    .sf-modal .sf-modal-content p {
+      margin: 0;
+      padding: 5px; }
+    .sf-modal .sf-modal-content h4 {
+      margin: 0;
+      padding: 5px; }
+    .sf-modal .sf-modal-content ol {
+      margin: 0;
+      padding: 0 5px 10px 23px;
+      font-size: 10px; }
