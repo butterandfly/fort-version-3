@@ -1,0 +1,32 @@
+<div class="form-page">
+  <div class="content-area2">
+    <form>
+      <legend class="form-title">在线预约：</legend>
+      <ul class="form-list">
+        <li class="get-50rmb">
+          <span>* </span>提交信息即可获赠50元话费
+          <span> <a class="more-detail" data-toggle="modal" data-target="#detail-modal">【点击查看详情】</a></span>
+        </li>
+        <li>
+          <input name="uname" type="text" placeholder="请输入您的称呼">
+        </li>
+
+        <li>
+          <input name="mobile" type="tel" placeholder="请输入您的电话">
+        </li>
+        <li class="agree-line">
+          <input type="checkbox" name="agree" checked/>
+          <p>我同意将本人信息提交给长安福特并要求长安福特根据 <span>《保护消费者个人信息基本方针》</span>保障个人信息安全</p>
+        </li>
+
+        <li class="btn-item">
+          <button id="submit" class="submit-btn" type="button">提交</button>
+          <button class="back2top" type="button">返回顶部</button>
+        </li>
+      </ul>
+    </form>
+  </div>
+
+  {% include "_components/modal/modal.html" %}
+
+</div> <!-- form-page -->

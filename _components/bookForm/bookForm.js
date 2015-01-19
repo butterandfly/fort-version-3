@@ -9,6 +9,12 @@
 
   var submitBtn = $('.submit-btn');
 
+  var back2topBtn = $('.back2top');
+  back2topBtn.on('click', function(ev) {
+    window._shunfei.mySwiper.swipeTo(0, 1000);
+    ___log('返回顶部');
+  });
+
 
   // 输入框事件，隐藏悬浮窗
   nameInputElm.on('focus', function() {

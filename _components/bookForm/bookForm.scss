@@ -109,11 +109,14 @@
     // 按钮列
     li.btn-item {
       button {
+        display: block;
         width: 100%;
         height: 46px;
         border: 0;
         font-size: 24px;
         color: white;
+        
+        margin-bottom: 10px;
       }
 
       .submit-btn {
@@ -121,7 +124,7 @@
         background-color: #d40e16;
       }
 
-      .back-btn {
+      .back2top {
         background-color: #777;
       }
     }

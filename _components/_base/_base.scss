@@ -1,4 +1,4 @@
-@import './base/base';
+@import '../../bower_components/scss-lib/base';
 /* 变量 */
 // 导航栏
 $navbar-height: 0px;
@@ -36,4 +36,17 @@ body {
     vertical-align: top;
     margin-left: 7px;
   }
+}
+
+.back2top {
+//  display: block;
+//  position: absolute;
+//  top: 0;
+//  right: 0;
+//
+//  border: none;
+//  color: #e45050;
+//  margin: 5px 10px;
+//  background: initial;
+//  font-size: 18px;
 }

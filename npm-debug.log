@@ -1,0 +1,75 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'update', 'create-component' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose request where is /create-component
+5 verbose request registry https://registry.npmjs.org/
+6 verbose request id 429c74efc48fe554
+7 verbose url raw /create-component
+8 verbose url resolving [ 'https://registry.npmjs.org/', './create-component' ]
+9 verbose url resolved https://registry.npmjs.org/create-component
+10 verbose request where is https://registry.npmjs.org/create-component
+11 info trying registry request attempt 1 at 19:36:09
+12 verbose etag "8BO53LSG3B7KAX4P0FJHHA5UD"
+13 http GET https://registry.npmjs.org/create-component
+14 http 304 https://registry.npmjs.org/create-component
+15 silly registry.get cb [ 304,
+15 silly registry.get   { date: 'Sat, 17 Jan 2015 11:36:10 GMT',
+15 silly registry.get     server: 'Apache',
+15 silly registry.get     via: '1.1 varnish',
+15 silly registry.get     'last-modified': 'Sat, 17 Jan 2015 11:36:10 GMT',
+15 silly registry.get     'cache-control': 'max-age=60',
+15 silly registry.get     etag: '"8BO53LSG3B7KAX4P0FJHHA5UD"',
+15 silly registry.get     age: '0',
+15 silly registry.get     'x-served-by': 'cache-ty67-TYO',
+15 silly registry.get     'x-cache': 'MISS',
+15 silly registry.get     'x-cache-hits': '0',
+15 silly registry.get     'x-timer': 'S1421494570.169638,VS0,VE487',
+15 silly registry.get     vary: 'Accept',
+15 silly registry.get     'content-length': '0',
+15 silly registry.get     'keep-alive': 'timeout=10, max=50',
+15 silly registry.get     connection: 'Keep-Alive' } ]
+16 verbose etag https://registry.npmjs.org/create-component from cache
+17 verbose cache add [ 'create-component', '^0.1.1' ]
+18 verbose cache add name="create-component" spec="^0.1.1" args=["create-component","^0.1.1"]
+19 verbose parsed url { protocol: null,
+19 verbose parsed url   slashes: null,
+19 verbose parsed url   auth: null,
+19 verbose parsed url   host: null,
+19 verbose parsed url   port: null,
+19 verbose parsed url   hostname: null,
+19 verbose parsed url   hash: null,
+19 verbose parsed url   search: null,
+19 verbose parsed url   query: null,
+19 verbose parsed url   pathname: '^0.1.1',
+19 verbose parsed url   path: '^0.1.1',
+19 verbose parsed url   href: '^0.1.1' }
+20 verbose addNamed [ 'create-component', '^0.1.1' ]
+21 verbose addNamed [ null, '>=0.1.1-0 <0.2.0-0' ]
+22 silly lockFile 29e6c081-create-component-0-1-1 create-component@^0.1.1
+23 verbose lock create-component@^0.1.1 /Users/zero/.npm/29e6c081-create-component-0-1-1.lock
+24 silly addNameRange { name: 'create-component',
+24 silly addNameRange   range: '>=0.1.1-0 <0.2.0-0',
+24 silly addNameRange   hasData: false }
+25 verbose registry.get https://registry.npmjs.org/create-component not expired, no request
+26 silly addNameRange number 2 { name: 'create-component',
+26 silly addNameRange   range: '>=0.1.1-0 <0.2.0-0',
+26 silly addNameRange   hasData: true }
+27 silly addNameRange versions [ 'create-component', [ '0.1.0' ] ]
+28 silly lockFile 29e6c081-create-component-0-1-1 create-component@^0.1.1
+29 silly lockFile 29e6c081-create-component-0-1-1 create-component@^0.1.1
+30 info outdated updating []
+31 error notarget No compatible version found: create-component@'>=0.1.1-0 <0.2.0-0'
+31 error notarget Valid install targets:
+31 error notarget ["0.1.0"]
+31 error notarget
+31 error notarget This is most likely not a problem with npm itself.
+31 error notarget In most cases you or one of your dependencies are requesting
+31 error notarget a package version that doesn't exist.
+32 error System Darwin 14.0.0
+33 error command "node" "/usr/local/bin/npm" "update" "create-component"
+34 error cwd /Users/zero/Working/ford_reborn
+35 error node -v v0.10.35
+36 error npm -v 1.4.28
+37 error code ETARGET
+38 verbose exit [ 1, true ]

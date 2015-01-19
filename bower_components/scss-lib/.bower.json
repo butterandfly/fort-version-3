@@ -1,0 +1,30 @@
+{
+  "name": "scss-lib",
+  "homepage": "https://github.com/butterandfly/scss-lib",
+  "authors": [
+    "butterandfly <zero.hero.lin@gmail.com>"
+  ],
+  "description": "A scss mixin libary.",
+  "main": "base.scss",
+  "keywords": [
+    "scss"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "bdc2b54efe",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "bdc2b54efe1cd52f525cf778728e4221911c70ed"
+  },
+  "_source": "git://github.com/butterandfly/scss-lib.git",
+  "_target": "*",
+  "_originalSource": "scss-lib",
+  "_direct": true
+}
