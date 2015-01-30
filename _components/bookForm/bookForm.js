@@ -9,13 +9,6 @@
 
   var submitBtn = $('.submit-btn');
 
-  var back2topBtn = $('.back2top');
-  back2topBtn.on('click', function(ev) {
-    window._shunfei.mySwiper.swipeTo(0, 1000);
-    ___log('返回顶部');
-  });
-
-
   // 输入框事件，隐藏悬浮窗
   nameInputElm.on('focus', function() {
     bottomFloat.hide();
@@ -30,18 +23,11 @@
     bottomFloat.show();
   });
 
-
-  // 同意提交个人信息
-  agreeCheckbox.on('touchend', function( ) {
-    ___log('点击是否同意checkbox, 点击后的结果为: ' + agreeCheckbox.prop('checked'));
-  });
-
   // 活动详情
   var detailModal = $('.sf-modal');
   var moreDetailBtn = $('.more-detail');
   moreDetailBtn.on('touchend', function() {
     detailModal.removeClass('hide');
-    ___log('显示活动详情');
   });
 
   // 提交按钮事件

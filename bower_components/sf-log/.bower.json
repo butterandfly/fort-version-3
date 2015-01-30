@@ -1,0 +1,27 @@
+{
+  "name": "sf-log",
+  "homepage": "https://github.com/butterandfly/sf-log",
+  "authors": [
+    "butterandfly <zero.hero.lin@gmail.com>"
+  ],
+  "description": "Auto bind ___log",
+  "main": "sfLog.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "5cb0ac3715",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "5cb0ac3715f30d783c6cdeeb48bf2e677e64a036"
+  },
+  "_source": "git://github.com/butterandfly/sf-log.git",
+  "_target": "*",
+  "_originalSource": "sf-log",
+  "_direct": true
+}

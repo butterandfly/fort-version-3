@@ -1,6 +1,11 @@
 (function() {
   "use strict";
 
+  sfLog.init({callback: function(msg) {
+    //console.log(msg);
+    ___log(msg);
+  }});
+
   var _shunfei = window._shunfei = {
     userIp: null
   };
@@ -15,7 +20,8 @@
     {imgSrc: 'img/07.jpg', wordsImgSrc: 'img/T07.png', wordsPos: '48%'},
     {imgSrc: 'img/08.jpg', wordsImgSrc: 'img/T08.png', wordsPos: '24%'},
     {imgSrc: 'img/09.jpg', wordsImgSrc: 'img/T09.png', wordsPos: '20%'},
-    {imgSrc: 'img/10.jpg', wordsImgSrc: 'img/T10.png', wordsPos: '20%'}
+    {imgSrc: 'img/10.jpg', wordsImgSrc: 'img/T10.png', wordsPos: '20%'},
+    {imgSrc: 'img/11.jpg', wordsImgSrc: 'img/T11.png', wordsPos: '30%'}
   ]
 
   var logMap = {};
@@ -49,19 +55,16 @@
 
   addPages();
 
+
+      // “进无止境”logo
+  var logoElm = $('.logo-line'),
+      // 预约试驾按钮
+      jumpBookBtn = $('.bottom-book'),
+      // 返回顶部按钮
+      jumpTopBtn = $('.bottom-cancel');
+
   _shunfei.totalPage = pageInfos.length;
   var preIndex = 0;
-
-  // 读取下一页图片
-  function loadNextPageImg(nextIndex, nextEle) {
-    nextEle.find('.main-img').each(function(){
-      var jqElm = $(this);
-      if (!jqElm.attr('src')) {
-        var src = jqElm.attr( "data-original" );
-        jqElm.attr('src', src);
-      }
-    })
-  }
 
   // 初始化swiper
   _shunfei.mySwiper = new Swiper('.swiper-container', {
@@ -106,8 +109,33 @@
         ___log(preIndex  + ' -> ' + currentIndex);
       }
       preIndex = swiper.activeIndex;
+
+      var currentIndex = swiper.activeIndex;
+      var formIndex = swiper.slides.length - 1;
+      if (currentIndex === formIndex) {
+        // 表单页要隐藏logo与替换预约试驾
+        logoElm.addClass('hide');
+        jumpBookBtn.addClass('hide');
+        jumpTopBtn.removeClass('hide');
+      } else {
+        // 非表单页显示logo，显示预约试驾
+        logoElm.removeClass('hide');
+        jumpTopBtn.addClass('hide');
+        jumpBookBtn.removeClass('hide');
+      }
     }
   });
+
+  // 读取下一页图片
+  function loadNextPageImg(nextIndex, nextEle) {
+    nextEle.find('.main-img').each(function(){
+      var jqElm = $(this);
+      if (!jqElm.attr('src')) {
+        var src = jqElm.attr( "data-original" );
+        jqElm.attr('src', src);
+      }
+    })
+  }
 })();
 (function() {
   "use strict";
@@ -119,13 +147,6 @@
   var agreeCheckbox = formPage.find('input[name=agree]');
 
   var submitBtn = $('.submit-btn');
-
-  var back2topBtn = $('.back2top');
-  back2topBtn.on('click', function(ev) {
-    window._shunfei.mySwiper.swipeTo(0, 1000);
-    ___log('返回顶部');
-  });
-
 
   // 输入框事件，隐藏悬浮窗
   nameInputElm.on('focus', function() {
@@ -141,18 +162,11 @@
     bottomFloat.show();
   });
 
-
-  // 同意提交个人信息
-  agreeCheckbox.on('touchend', function( ) {
-    ___log('点击是否同意checkbox, 点击后的结果为: ' + agreeCheckbox.prop('checked'));
-  });
-
   // 活动详情
   var detailModal = $('.sf-modal');
   var moreDetailBtn = $('.more-detail');
   moreDetailBtn.on('touchend', function() {
     detailModal.removeClass('hide');
-    ___log('显示活动详情');
   });
 
   // 提交按钮事件
@@ -214,17 +228,15 @@
 
   var _shunfei = window._shunfei;
 
+  var back2topBtn = $('.bottom-cancel');
+  back2topBtn.on('click', function(ev) {
+    window._shunfei.mySwiper.swipeTo(0, 1000);
+  });
+
   // 立即预定按钮的事件
   $('.bottom-book').on('touchend', function() {
     _shunfei.mySwiper.swipeTo(_shunfei.totalPage + 1, 1000);
     // TODO: 寻找可以弹出键盘的方法
-    //nameInputElm.focus();
-    ___log('跳进表单页');
-  });
-
-  // 拨打电话的点击统计
-  $('a.call').on('touchend', function() {
-    ___log('拨打电话');
   });
 })();
 

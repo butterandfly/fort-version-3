@@ -22,7 +22,11 @@
 <body>
 <!-- 漂浮的logo -->
 <div class="logo-line">
-  <img src="img/logo.png" alt="福特" class="logo"><span>福特福睿斯</span>
+  <div class="justgo-logo">
+    <img src="img/logo.png"/>
+    <p>进无止境</p>
+  </div>
+  <span>福特福睿斯</span>
 </div>
 
 <!-- 内容页 -->
@@ -30,6 +34,10 @@
   <div class="swiper-wrapper">
 
     <div class="swiper-slide page">
+      <a class="enter-ford" href="http://m.escort.ford.com.cn/index.html" sf-log="进入官网">
+        <div></div>
+        <span>进入官网</span>
+      </a>
       <img src="img/00.jpg">
       <div class="next-page-wraper">
         <span class="next-page">
@@ -45,7 +53,7 @@
       <ul class="form-list">
         <li class="get-50rmb">
           <span>* </span>提交信息即可获赠50元话费
-          <span> <a class="more-detail" data-toggle="modal" data-target="#detail-modal">【点击查看详情】</a></span>
+          <span> <a class="more-detail" data-toggle="modal" data-target="#detail-modal" sf-log="显示活动详情">【点击查看详情】</a></span>
         </li>
         <li>
           <input name="uname" type="text" placeholder="请输入您的称呼">
@@ -54,14 +62,23 @@
         <li>
           <input name="mobile" type="tel" placeholder="请输入您的电话">
         </li>
+
+        <li class="city-line">
+          <select name="city" id="city">
+            <option value="none" disabled selected>城市</option>
+          </select>
+          <select name="store" id="store">
+            <option value="none" disabled selected>经销商</option>
+          </select>
+        </li>
+
         <li class="agree-line">
-          <input type="checkbox" name="agree" checked/>
+          <input type="checkbox" name="agree" sf-log="是否选中同意提交信息：${self.prop('checked')}" checked/>
           <p>我同意将本人信息提交给长安福特并要求长安福特根据 <span>《保护消费者个人信息基本方针》</span>保障个人信息安全</p>
         </li>
 
         <li class="btn-item">
           <button id="submit" class="submit-btn" type="button">提交</button>
-          <button class="back2top" type="button">返回顶部</button>
         </li>
       </ul>
     </form>
@@ -99,10 +116,10 @@
 
 <div class="bottom-float">
   <div class="footer-backdrop"></div>
-  <a href="tel:400-809-1139" class="call"><img src="img/phone.png" />电话咨询</a>
+  <a href="tel:400-809-1139" class="call" sf-log="拨打电话" sf-log-event="touchend"><img src="img/phone.png" />电话咨询</a>
   <span class="cutting-line"></span>
-  <a class="bottom-book"><img src="img/pen.png"/>预约试驾</a>
-  <a class="bottom-cancel hide"><img src="img/pen.png"/>返回文章</a>
+  <a class="bottom-book" sf-log="进入表单页"><img src="img/pen.png"/>预约试驾</a>
+  <a class="bottom-cancel hide" sf-log="返回顶部"><img src="img/pen.png"/>返回顶部</a>
 </div>
 
 <!-- 监测代码part1 -->
@@ -122,6 +139,7 @@
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/swiper/dist/idangerous.swiper.min.js"></script>
+<script src="bower_components/sf-log/dist/sfLog.js"></script>
 
 <script src="source/main.js"></script>
 

@@ -52,6 +52,21 @@
         border: 1px solid #ccc;
         border-radius: 2px;
       }
+
+    }
+
+    li.city-line {
+      @include flex-layout(row, space-between, center);
+
+      @media screen and (-webkit-min-device-pixel-ratio:0) {  /*safari and chrome*/
+        select {
+          height:40px;
+          line-height:40px;
+          background:#f4f4f4;
+          width: 135px;
+          font-size: 20px;
+        }
+      }
     }
 
     li.get-50rmb {

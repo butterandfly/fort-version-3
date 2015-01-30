@@ -5,7 +5,7 @@
       <ul class="form-list">
         <li class="get-50rmb">
           <span>* </span>提交信息即可获赠50元话费
-          <span> <a class="more-detail" data-toggle="modal" data-target="#detail-modal">【点击查看详情】</a></span>
+          <span> <a class="more-detail" data-toggle="modal" data-target="#detail-modal" sf-log="显示活动详情">【点击查看详情】</a></span>
         </li>
         <li>
           <input name="uname" type="text" placeholder="请输入您的称呼">
@@ -14,14 +14,23 @@
         <li>
           <input name="mobile" type="tel" placeholder="请输入您的电话">
         </li>
+
+        <li class="city-line">
+          <select name="city" id="city">
+            <option value="none" disabled selected>城市</option>
+          </select>
+          <select name="store" id="store">
+            <option value="none" disabled selected>经销商</option>
+          </select>
+        </li>
+
         <li class="agree-line">
-          <input type="checkbox" name="agree" checked/>
+          <input type="checkbox" name="agree" sf-log="是否选中同意提交信息：${self.prop('checked')}" checked/>
           <p>我同意将本人信息提交给长安福特并要求长安福特根据 <span>《保护消费者个人信息基本方针》</span>保障个人信息安全</p>
         </li>
 
         <li class="btn-item">
           <button id="submit" class="submit-btn" type="button">提交</button>
-          <button class="back2top" type="button">返回顶部</button>
         </li>
       </ul>
     </form>

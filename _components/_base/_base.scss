@@ -8,7 +8,7 @@ $footer-height: 50px;
 body {
   @include no-around-space();
 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "微软雅黑", Arial, Helvetica, sans-serif;
   font-size: 13px;
   line-height: 1.5;
   overflow: hidden;
@@ -20,14 +20,11 @@ body {
 }
 
 .logo-line {
+  @include flex-layout(row, center, center);
   position: absolute;
   z-index: 2;
 
-  padding: 7px;
-
-  img {
-    width: 55px;
-  }
+  padding: 10px;
 
   span {
     color: white;
@@ -36,6 +33,43 @@ body {
     vertical-align: top;
     margin-left: 7px;
   }
+
+  .justgo-logo {
+    @include flex-layout(column, center, center);
+
+    img {
+      width: 55px;
+    }
+
+    p {
+      margin: 0;
+      padding-top: 3px;
+      font-size: 10px;
+      color: white;
+    }
+  }
+}
+
+.enter-ford {
+  display: inline-block;
+  position: absolute;
+  color: white;
+  right: 10px;
+  top: 10px;
+  height: 30px;
+  width: 80px;
+  line-height: 30px;
+  text-decoration: none;
+  z-index: 1;
+
+  div {
+    @include backdrop(black, 0.5, -1);
+  }
+
+  span {
+    color: #eee;
+  }
+
 }
 
 .back2top {
